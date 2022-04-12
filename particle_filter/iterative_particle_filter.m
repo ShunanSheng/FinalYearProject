@@ -29,7 +29,6 @@ function [xhk, ipf] = iterative_particle_filter(sys, yk, ipf, ibar, resampling_s
 % xhk   = estimated state
 % ipf    = the same structure as in the input but updated at iteration k
 
-
 %%
 k = ipf.k;
 if k == 1
