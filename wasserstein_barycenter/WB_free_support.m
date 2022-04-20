@@ -40,7 +40,7 @@ function [X, a] = WB_free_support(n, Y_cell, b_cell, t0, tol, Max_Iter)
             % use LP computation
 %             [T_cell{k},~] = Wdist_LP(M_cell{k}, a, b_cell{k});
 
-            [~, T_cell{k}] = Wdist_Sinkhorn(M_cell{k}, a, b_cell{k}, lambda, tol);
+            [~, T_cell{k}] = Wdist_Sinkhorn(M_cell{k}, a, b_cell{k}, lambda, tol, Max_Iter);
 
 %             fprintf("Use original implementation\n")
 %             K = exp(-lambda .* M_cell{k});

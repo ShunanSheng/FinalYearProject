@@ -176,7 +176,7 @@ function [MSloss, bar, opf, ipf, ibar, kf] = FuncSyntheticExperiment(nw, opf, kf
             plot(1:T, xkf,'-k','LineWidth', 4)
             S{end+1} = 'Kalman filter';
             hold off
-            title("Approximated Target State Process",'FontSize', 16)
+            title("Approximated Target State Process",'FontSize', 20)
             xlabel("Time",'FontSize', 15)
             ylabel("State",'FontSize',15)
             legend(S,'location', 'best')

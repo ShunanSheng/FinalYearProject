@@ -51,7 +51,7 @@ nw.gen_obs_noise = gen_obs_noise;
 
 %% Build the particle filters parameters
 pf.k               = 1;                   % initial iteration number
-pf.Ns              = 100;                 % number of particles
+pf.Ns              = 200;                 % number of particles
 pf.w               = zeros(pf.Ns, T);     % weights
 pf.particles       = zeros(nx, pf.Ns, T); % particles
 pf.gen_x0          = gen_x0;              % function for sampling from initial pdf p_x0
@@ -67,7 +67,7 @@ end
 options.fig = 0;
 options.print = 1;
 options.save = 1;
-options.file_name = strcat("examples/Synthetic2DT=",num2str(T),".mat");
+options.file_name = strcat("examples/Synthetic2DT=",num2str(T),"Ns=", num2str(pf.Ns), ".mat");
 options.rnd = 0;
 
 %% Build Kalman filter
@@ -83,7 +83,6 @@ model.P0 = Sigma_u;
 save(options.file_name, 'MSloss','-append')
 %%
 T = 10;
-options.file_name = strcat("examples/Synthetic2DT=",num2str(T),".mat");
 s = load(options.file_name);
 plotHist(bar,opf, ibar, kf, s.x, T)
 

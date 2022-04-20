@@ -38,9 +38,9 @@ function [alpha_opt, varargout] = Wdist_Sinkhorn(M, a, b, lambda, tol, Max_Iter)
         v = b./((u' * K)');
         u = 1./(K_tilde * v);
         t = t + 1;
-        if (mod(t, 20) == 0)
+        if (mod(t, 200) == 0)
             Criterion = norm(sum(abs(v.*(K'*u)-b)),Inf); % we use marginal difference criterion
-            fprintf("Sinkhorn algo : Iteration %d, with distance %6.4f\n", t, Criterion)
+%             fprintf("Sinkhorn algo : Iteration %d, with distance %6.4f\n", t, Criterion)
             if (Criterion < tol)|| isnan(Criterion)
                 break;
             end
